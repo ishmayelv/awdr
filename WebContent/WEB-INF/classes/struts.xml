@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="default" namespace="/" extends="struts-default">  		
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>		
+		<action name="*Link" method="{1}" class="com.csc.zna.LogingEx">
+			<result name="welcome" type="tiles">welcome</result>
+			<result name="page1" type="tiles">page1</result>
+			<result name="page2" type="tiles">page2</result>
+			<result name="about" type="tiles">about</result>
+			
+			<result name="generate" type="tiles">generate</result>
+			
+		</action>
+		
+		<action name="submitform" class="com.csc.zna.DownloadDesignSource">
+			<result name="downLoadFile" type="tiles" >downLoadFile</result>
+		</action>	
+		
+				
+	</package>	
+	
+</struts>
+
+
